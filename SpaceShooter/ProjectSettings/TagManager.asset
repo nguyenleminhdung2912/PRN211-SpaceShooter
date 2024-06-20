@@ -11,6 +11,7 @@ TagManager:
   - GameOverCamera
   - ScoreTextTag
   - AsteroidsTag
+  - PauseMenuTag
   layers:
   - Default
   - TransparentFX

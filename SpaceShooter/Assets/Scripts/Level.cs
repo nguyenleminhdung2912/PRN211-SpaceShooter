@@ -30,6 +30,13 @@ public class Level : MonoBehaviour
         yield return new WaitForSeconds(delayInSeconds);
         SceneManager.LoadScene("Game Over");
     }
+    public void GoToMainMenu()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("Game Menu");
+    }
+
+
     public void QuitGame()
     {
         Application.Quit();
