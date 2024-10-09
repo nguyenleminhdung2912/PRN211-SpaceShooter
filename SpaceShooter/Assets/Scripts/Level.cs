@@ -7,6 +7,7 @@ public class Level : MonoBehaviour
 {
 
     [SerializeField] float delayInSeconds = 2f;
+    [SerializeField] public GameObject instructionsPanel;
 
     public void LoadStartMenu()
     {
@@ -16,7 +17,6 @@ public class Level : MonoBehaviour
     public void LoadGame()
     {
         SceneManager.LoadScene("GameEngine");
-        //FindObjectOfType<GameManagerController>().ResetGame();
     }
 
     public void LoadGameOver()
