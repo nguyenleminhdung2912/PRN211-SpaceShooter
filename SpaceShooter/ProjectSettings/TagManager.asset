@@ -12,6 +12,7 @@ TagManager:
   - ScoreTextTag
   - AsteroidsTag
   - PauseMenuTag
+  - Star
   layers:
   - Default
   - TransparentFX

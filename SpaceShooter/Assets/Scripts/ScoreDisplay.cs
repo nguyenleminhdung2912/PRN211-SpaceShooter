@@ -1,3 +1,4 @@
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -7,17 +8,25 @@ public class ScoreDisplay : MonoBehaviour
 {
     TextMeshProUGUI scoreTextUI;
 
-    int score = 0;
+    public static int score = 0;
+
+    public string returnScore() => score.ToString();
+
+    private void Awake()
+    {
+        // Giữ đối tượng này khi chuyển scene
+        DontDestroyOnLoad(gameObject);
+    }
 
     public int Score
     {
         get
         {
-            return this.score;
+            return score;
         }
         set
         {
-            this.score = value;
+            score = value;
         }
     }
     // Start is called before the first frame update
@@ -37,5 +46,7 @@ public class ScoreDisplay : MonoBehaviour
     {
         score += pointsToAdd;
         UpdateScoreTextUI();
+        PlayerPrefs.SetInt("FinalScore", score);
+        PlayerPrefs.Save();
     }
 }

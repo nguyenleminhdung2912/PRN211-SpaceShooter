@@ -106,6 +106,11 @@ public class PLayerController : MonoBehaviour
             if (!damageDealer) { return; }
             ProcessHit(damageDealer);
         }
+        if (other.gameObject.tag == "Star")
+        {
+                FindObjectOfType<ScoreDisplay>().AddToScore(100);
+                Destroy(gameObject);
+        }
     }
 
     private void ProcessHit(DameDealer damageDealer)
